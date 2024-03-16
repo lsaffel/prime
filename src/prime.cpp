@@ -1,11 +1,27 @@
 #include <iostream>
 using namespace std;
 
+bool isPrimeNumber(int number);
+
 int main()
 {
     int number;
     cout << "Number: ";
     cin >> number;
+    bool isPrimeFlag = isPrimeNumber(number);
+
+
+
+    if(isPrimeFlag) 
+        cout << "Prime number" << endl;
+    else
+        cout << "Not a prime number" << endl;
+
+
+    return 0;
+}
+
+bool isPrimeNumber(int number) {
     bool isPrimeFlag = true;
 
     // start at 2 and less than number since every number
@@ -18,12 +34,5 @@ int main()
             break;
         }
     }
-
-    if(isPrimeFlag) 
-        cout << "Prime number" << endl;
-    else
-        cout << "Not a prime number" << endl;
-
-
-    return 0;
+    return isPrimeFlag;
 }
