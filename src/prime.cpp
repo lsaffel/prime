@@ -10,29 +10,24 @@ int main()
     cin >> number;
     bool isPrimeFlag = isPrimeNumber(number);
 
-
-
     if(isPrimeFlag) 
         cout << "Prime number" << endl;
     else
         cout << "Not a prime number" << endl;
 
-
     return 0;
 }
 
 bool isPrimeNumber(int number) {
-    bool isPrimeFlag = true;
 
     // start at 2 and less than number since every number
     // is divisible by 1 and divible by itself, so
     // no need to check 1 or number
     for(int i = 2; i < number; i++) {
         if(number % i == 0) {
-            isPrimeFlag = false;
             cout << "The first number it is divisible by is: " << i << endl;
-            break;
+            return false;
         }
     }
-    return isPrimeFlag;
+    return true;
 }
